@@ -12,7 +12,7 @@ if not api_key:
     st.stop()
 
 # Initialize the OpenAI client with the API key
-client = openai.OpenAI(api_key=api_key)
+openai.api_key = api_key
 
 #thread id를 하나로 관리하기 위함
 if 'thread_id' not in st.session_state:
