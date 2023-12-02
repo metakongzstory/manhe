@@ -14,14 +14,17 @@ if not api_key:
 # Initialize the OpenAI client with the API key
 openai.api_key = api_key
 
-#thread id를 하나로 관리하기 위함
-if 'thread_id' not in st.session_state:
-    thread = openai.Thread.create()
-    st.session_state.thread_id = thread.id
+# #thread id를 하나로 관리하기 위함
+# if 'thread_id' not in st.session_state:
+#     thread = openai.Thread.create()
+#     st.session_state.thread_id = thread.id
 
-#thread_id, assistant_id 설정
-thread_id = st.session_state.thread_id
+# #thread_id, assistant_id 설정
+# thread_id = st.session_state.thread_id
+
 #미리 만들어 둔 Assistant
+
+thread_id = "thread_fIdmyhU4U5qQHdV2HNGtVoJ7"
 assistant_id = "asst_KC8f7CVoJAdma43Wi0YiFM3q"
 
 #메세지 모두 불러오기
