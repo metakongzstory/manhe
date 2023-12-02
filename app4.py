@@ -3,11 +3,13 @@ import openai
 import streamlit as st
 import time
 
-# Set your API key here
-os.environ['OPENAI_API_KEY'] = "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"
-
 # Fetch the API key from the environment variable
 api_key = os.environ.get('OPENAI_API_KEY')
+
+# Check if the API key is available
+if not api_key:
+    st.error("OpenAI API key is not set in the environment variables.")
+    st.stop()
 
 # Initialize the OpenAI client with the API key
 client = openai.OpenAI(api_key=api_key)
