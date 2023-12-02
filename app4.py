@@ -16,7 +16,7 @@ openai.api_key = api_key
 
 #thread id를 하나로 관리하기 위함
 if 'thread_id' not in st.session_state:
-    thread = client.beta.threads.create()
+    thread = openai.Thread.create()
     st.session_state.thread_id = thread.id
 
 #thread_id, assistant_id 설정
